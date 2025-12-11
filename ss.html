@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Signal - AR Experience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #00f3ff; /* Neon Cyan */
+            --bg-color: #050505;      /* Σχεδόν μαύρο */
+            --card-bg: #111111;       /* Σκούρο γκρι */
+            --text-color: #e0e0e0;
+            --accent-glow: 0 0 20px rgba(0, 243, 255, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.05) 0%, transparent 20%);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: var(--accent-glow);
+            animation: glitch 3s infinite;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        /* Main Card */
+        .game-card {
+            background: rgba(17, 17, 17, 0.8);
+            border: 1px solid #333;
+            padding: 2.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 1px solid rgba(0, 243, 255, 0.3);
+            margin-bottom: 3rem;
+        }
+
+        /* Features List */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: var(--accent-glow);
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.8);
+            background-color: #fff;
+        }
+
+        .file-info {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            border-top: 1px solid #222;
+            width: 100%;
+        }
+
+        /* Animation Keyframes */
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00f3ff; }
+            90% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00f3ff; }
+            92% { text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00f3ff; transform: skewX(10deg); }
+            94% { text-shadow: 0px 0px 0px transparent; transform: skewX(0deg); }
+            100% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00f3ff; }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 1rem; }
+            .game-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Silent Signal</h1>
+
+        </header>
+
+        <main class="game-card">
+            <div class="features">
+                <span class="feature-tag"><i class="fas fa-vr-cardboard"></i> Augmented Reality</span>
+                <span class="feature-tag"><i class="fas fa-robot"></i> AI Assistant</span>
+                <span class="feature-tag"><i class="fas fa-university"></i> Museum Gamification</span>
+            </div>
+
+            <p>
+                Πρόκειται για ένα καινοτόμο εκπαιδευτικό παιχνίδι επαυξημένης πραγματικότητας (AR) που συνδυάζει παραγωγική τεχνητή νοημοσύνη (GenAI).
+            </p>
+            <p>
+                Αναλάβετε την αποστολή να λύσετε σύνθετους γρίφους, να αφοπλίσετε επικίνδυνες νάρκες 
+                και να σώσετε το μουσείο από την καταστροφή. Στον ρόλο του ψηφιακού ξεναγού στέκεται ο 
+                <strong>Echo</strong>, ένας έξυπνος AI βοηθός που προσαρμόζεται στην πρόοδό σας.
+            </p>
+
+            <a href="#" class="download-btn">
+                <i class="fab fa-android"></i> Download .APK
+            </a>
+            
+            <div class="file-info">
+             Size: 102.6 MB | Android Only
+            </div>
+        </main>
+
+        <footer>
+            <p>Created by <strong>Christos Koulouris</strong></p>
+            <p style="font-size: 0.8rem;">Μουσείο Επιστημών και Τεχνολογίας Πανεπιστημίου Πατρών</p>
+        </footer>
+    </div>
+
+</body>
+</html>
